@@ -29,9 +29,9 @@ This repository contains the code for my personal portfolio website, showcasing 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/your-username/portfolio-web.git
    ```
-2. Open `index.html` in your web browser.
+2. Open `index.html` in your web browser, using live server or any other means which is convenient.
 
 
 ## Future Enhancements
