@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Animated Background</title>
+  <style>
+    /* Your color palette from the image */
+    :root {
+      --black: #292421;
+      --copper: #A75F37;
+      --pink: #CA8E82;
+      --tan: #D9B99F;
+      --blush: #F2D6CE;
+      --vanilla: #F2E7DD;
+      --green: #7A958F;
+      --mint: #BAE0DA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: var(--vanilla);
+      color: var(--black);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 200px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50px;
+      animation: float 15s infinite linear;
+      opacity: 0.7;
+    }
+
+    .cloud:before, .cloud:after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+    }
+
+    .cloud:before {
+      width: 100px;
+      height: 100px;
+      top: -50px;
+      left: 25px;
+    }
+
+    .cloud:after {
+      width: 80px;
+      height: 80px;
+      top: -35px;
+      right: 25px;
+    }
+
+    .rainbow {
+      position: absolute;
+      width: 100%;
+      height: 1000px;
+      bottom: -50px;
+      left: 0;
+      opacity: 0.5;
+      background: linear-gradient(
+        to bottom,
+        var(--copper),
+        var(--pink),
+        var(--blush),
+        var(--tan),
+        var(--mint),
+        var(--green)
+      );
+      border-radius: 100% 100% 0 0;
+      transform: scale(1.5);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateX(-200px);
+      }
+      100% {
+        transform: translateX(calc(100vw + 200px));
+      }
+    }
+
+    .content {
+      position: relative;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* Adding animation delay for different clouds */
+    .cloud:nth-child(1) {
+      top: 20%;
+      animation-duration: 50s;
+      transform: scale(0.8);
+    }
+
+    .cloud:nth-child(2) {
+      top: 30%;
+      animation-duration: 35s;
+      animation-delay: 5s;
+    }
+
+    .cloud:nth-child(3) {
+      top: 15%;
+      animation-duration: 45s;
+      animation-delay: 15s;
+      transform: scale(1.2);
+    }
+
+    .cloud:nth-child(4) {
+      top: 40%;
+      animation-duration: 40s;
+      animation-delay: 25s;
+      transform: scale(0.6);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--copper);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    /* Simple section styling */
+    section {
+      margin: 6rem 0;
+    }
+
+    /* Add these styles for demonstration */
+    .placeholder {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .placeholder:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="rainbow"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
+
+  <div class="content">
+    <section id="home">
+      <h1>Your Name</h1>
+      <p>Welcome to my portfolio! I'm a creative developer passionate about building beautiful web experiences.</p>
+      
+      <div class="placeholder">
+        <h2>Featured Project</h2>
+        <p>This is where you can highlight your best work with a brief description.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="placeholder">
+        <h2>About Me</h2>
+        <p>Share your background, passions, and skills here.</p>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="placeholder">
+        <h2>My Work</h2>
+        <p>This is where your projects would go.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="placeholder">
+        <h2>Get In Touch</h2>
+        <p>Contact information and form would go here.</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Basic JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', () => {
+      // Create more clouds dynamically
+      const background = document.querySelector('.background');
+      
+      for (let i = 0; i < 6; i++) {
+        const cloud = document.createElement('div');
+        cloud.classList.add('cloud');
+        cloud.style.top = `${Math.random() * 60}%`;
+        cloud.style.animationDuration = `${Math.random() * 30 + 30}s`;
+        cloud.style.animationDelay = `${Math.random() * 20}s`;
+        cloud.style.transform = `scale(${Math.random() * 0.8 + 0.6})`;
+        background.appendChild(cloud);
+      }
+    });
+  </script>
+</body>
+</html>
