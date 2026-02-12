@@ -826,30 +826,323 @@
     80% { opacity: 0.6; }
     100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
   }
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .computer {
-      width: 95%;
-    }
-    
-    .folder-container {
-      right: 20px;
-      top: 20px;
-    }
-    
-    .welcome-content {
-      left: 20px;
-      max-width: 70%;
-    }
-    
-    .keyboard {
-      width: 80%;
-    }
-    
-    .decor-rainbow, .pen-holder, .design-elements {
-      display: none;
-    }
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .computer {
+    width: 90%;
+    height: 75vh;
   }
+  
+  .welcome-content {
+    max-width: 55%;
+  }
+  
+  .folder-container {
+    right: 15px;
+  }
+  
+  .folder {
+    margin-bottom: 12px;
+  }
+  
+  .folder-icon {
+    width: 50px;
+    height: 40px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .desk {
+    padding: 10px;
+    min-height: 100vh;
+  }
+  
+  .computer {
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .monitor {
+    height: auto;
+    min-height: 70vh;
+    padding: 8px;
+  }
+  
+  .screen {
+    min-height: 65vh;
+    overflow-y: auto;
+  }
+  
+  .desktop {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .welcome-content {
+    position: relative;
+    left: auto;
+    top: auto;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .welcome-content h1 {
+    font-size: 1.8em;
+  }
+  
+  .welcome-content p {
+    font-size: 0.9em;
+  }
+  
+  .hint-text {
+    font-size: 0.75em !important;
+    padding: 10px !important;
+  }
+  
+  .folder-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .folder {
+    margin: 0;
+    flex: 0 0 calc(33% - 10px);
+    text-align: center;
+  }
+  
+  .folder-icon {
+    width: 45px;
+    height: 35px;
+    margin: 0 auto;
+  }
+  
+  .folder-name {
+    font-size: 0.7em;
+  }
+  
+  .keyboard {
+    width: 90%;
+    height: 30px;
+  }
+  
+  .keys {
+    display: none;
+  }
+  
+  .decor-rainbow, .pen-holder, .design-elements, .sticky-note {
+    display: none;
+  }
+  
+  .flower {
+    transform: scale(0.7);
+    left: 10px;
+    bottom: 5px;
+  }
+  
+  .taskbar {
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  
+  .start-btn {
+    font-size: 0.75em;
+    padding: 4px 10px;
+  }
+  
+  .fun-fact-ticker {
+    display: none;
+  }
+  
+  .time {
+    font-size: 0.75em;
+  }
+  
+  /* Modal adjustments */
+  .modal-content {
+    width: 95%;
+    max-width: none;
+    height: 80vh;
+    margin: 10vh auto;
+  }
+  
+  .modal-body {
+    padding: 15px;
+  }
+  
+  /* Terminal adjustments */
+  .terminal-window {
+    width: 95%;
+    height: 50vh;
+  }
+  
+  /* Keyboard hints hidden on mobile */
+  .keyboard-hint {
+    display: none;
+  }
+  
+  body::after {
+    display: none;
+  }
+  
+  /* Project cards */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    padding: 15px;
+  }
+  
+  /* Skills section */
+  .skills-container {
+    padding: 15px;
+  }
+  
+  .skill-item {
+    margin-bottom: 12px;
+  }
+  
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Contact section */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Resume section */
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .experience-section {
+    padding: 15px;
+  }
+  
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .computer {
+    border-radius: 5px;
+  }
+  
+  .monitor {
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+  }
+  
+  .welcome-content h1 {
+    font-size: 1.4em;
+  }
+  
+  .welcome-content p {
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  .folder {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  .folder-icon {
+    width: 40px;
+    height: 30px;
+  }
+  
+  .base, .stand {
+    display: none;
+  }
+  
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .sound-toggle {
+    display: none;
+  }
+  
+  .modal-content {
+    height: 90vh;
+    margin: 5vh auto;
+    border-radius: 10px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.2em;
+  }
+  
+  .about-section, .skills-container, .contact-container, .resume-container {
+    padding: 10px;
+  }
+  
+  .section-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .section-icon {
+    font-size: 2em;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-card {
+    padding: 15px;
+  }
+  
+  .download-btn {
+    padding: 12px 20px;
+    font-size: 0.9em;
+  }
+  
+  .terminal-window {
+    width: 98%;
+    height: 60vh;
+    top: 20%;
+    left: 1%;
+    transform: none;
+  }
+  
+  .screensaver-text {
+    font-size: 2rem;
+  }
+  
+  .screensaver-subtext {
+    font-size: 1rem;
+  }
+}
 
 /* ============================================
    ENHANCED INTERACTIVE COMPONENTS
